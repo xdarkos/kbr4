@@ -1,0 +1,1147 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İstanbul Catering</title>
+    <!-- Google Fontlar -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Lobster&display=swap" rel="stylesheet">
+    <style>
+        /* Genel Ayarlar */
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #111;
+            color: white;
+        }
+
+        /* Header Bölümü */
+        header {
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+            background: url('https://i.hizliresim.com/rier4to.png') no-repeat center center/cover;
+            box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
+            position: relative;
+        }
+
+        header h1 {
+            font-family: 'Lobster', cursive;
+            font-size: 4rem;
+            margin: 0;
+            text-shadow: 0 0 5px #fff, 0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 40px #ff00ff, 0 0 80px #ff00ff;
+            animation: neon-flicker 1.5s infinite alternate;
+        }
+
+        header p {
+            font-size: 1.5rem;
+            margin-top: 15px;
+            font-weight: 500;
+            text-shadow: 0 0 5px #fff, 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 40px #00ffff, 0 0 80px #00ffff;
+            animation: neon-glow 2s infinite alternate;
+        }
+
+        /* Neon Animasyonlar */
+        @keyframes neon-flicker {
+            0%, 49% {
+                opacity: 1;
+                text-shadow: 0 0 5px #fff, 0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 40px #ff00ff, 0 0 80px #ff00ff;
+            }
+            50%, 100% {
+                opacity: 0.8;
+                text-shadow: 0 0 2px #fff, 0 0 8px #ff00ff, 0 0 16px #ff00ff, 0 0 32px #ff00ff, 0 0 64px #ff00ff;
+            }
+        }
+
+        @keyframes neon-glow {
+            0%, 49% {
+                opacity: 1;
+                text-shadow: 0 0 5px #fff, 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 40px #00ffff, 0 0 80px #00ffff;
+            }
+            50%, 100% {
+                opacity: 0.8;
+                text-shadow: 0 0 2px #fff, 0 0 8px #00ffff, 0 0 16px #00ffff, 0 0 32px #00ffff, 0 0 64px #00ffff;
+            }
+        }
+
+        /* Navigation */
+        nav {
+            display: flex;
+            justify-content: center;
+            background: #333;
+            padding: 10px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        nav a {
+            color: white;
+            padding: 14px 20px;
+            text-decoration: none;
+            font-family: 'Lobster', cursive;
+            font-size: 1.5rem;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            position: relative;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+        }
+
+        nav a:hover {
+            color: #FFD700;
+            text-shadow: 2px 2px 10px rgba(255, 215, 0, 0.7);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: -5px;
+            width: 0;
+            height: 3px;
+            background: #FFD700;
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: #444;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .dropdown-menu a {
+            display: block;
+            padding: 10px 20px;
+            color: white;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .dropdown-menu a:hover {
+            background: #555;
+        }
+
+        .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+
+        /* Hero Bölümü */
+        .hero {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(34, 34, 34, 0.8)), url('https://i.hizliresim.com/1ejkewm.png') no-repeat center center/cover;
+            color: white;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .hero h1 {
+            font-family: 'Lobster', cursive;
+            font-size: 3.5rem;
+            margin: 0;
+            text-shadow: 0 0 5px #fff, 0 0 10px #ff4500, 0 0 20px #ff4500, 0 0 40px #ff4500, 0 0 80px #ff4500;
+            animation: glow-effect 1.5s infinite alternate;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            margin: 20px 0;
+            font-weight: 500;
+            text-shadow: 0 0 5px #fff, 0 0 10px #00ff7f, 0 0 20px #00ff7f, 0 0 40px #00ff7f, 0 0 80px #00ff7f;
+            animation: glow-effect 2s infinite alternate;
+        }
+
+        .hero-btn {
+            display: inline-block;
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            color: #fff;
+            background: #ff4500;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+            text-shadow: 0 0 5px #fff, 0 0 10px #ff4500, 0 0 20px #ff4500;
+        }
+
+        .hero-btn:hover {
+            background: #ff6347;
+            text-shadow: 0 0 10px #fff, 0 0 20px #ff6347;
+            box-shadow: 0 0 20px #ff6347;
+        }
+
+        @keyframes glow-effect {
+            0%, 49% {
+                text-shadow: 0 0 5px #fff, 0 0 10px #ff4500, 0 0 20px #ff4500;
+            }
+            50%, 100% {
+                text-shadow: 0 0 2px #fff, 0 0 8px #ff4500, 0 0 16px #ff4500;
+            }
+        }
+    </style>
+
+        <style>
+        @media (max-width: 768px) {
+            body {
+                font-size: 90%;
+            }
+            nav {
+                flex-direction: column;
+                text-align: center;
+            }
+            .menu-container, .service-list {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .menu-card, .service-item {
+                width: 90%;
+                margin: 10px auto;
+            }
+            .hero h1, .contact-header h1 {
+                font-size: 2.5rem;
+            }
+            .hero p, .contact-info p {
+                font-size: 1.2rem;
+            }
+            .hero-btn, .about-btn, .contact-button {
+                padding: 10px 20px;
+                font-size: 1rem;
+            }
+        }
+        </style>
+        
+
+        <style>
+        @media (max-width: 768px) {
+            body {
+                font-size: 90%;
+                margin: 0;
+                padding: 0;
+            }
+            nav {
+                flex-direction: column;
+                text-align: center;
+                padding: 10px 0;
+            }
+            nav a {
+                font-size: 1rem;
+                padding: 10px 15px;
+            }
+            header, .hero {
+                padding: 20px;
+                text-align: center;
+            }
+            .menu-container, .service-list {
+                flex-wrap: wrap;
+                justify-content: center;
+                margin: 0 auto;
+            }
+            .menu-card, .service-item {
+                width: 100%;
+                margin: 10px auto;
+                max-width: 300px;
+            }
+            img {
+                max-width: 100%;
+                height: auto;
+            }
+        }
+        </style>
+        
+        <style>
+        @media (max-width: 768px) {
+            /* General adjustments for mobile screens */
+            body {
+                font-size: 14px;
+                line-height: 1.6;
+                margin: 0;
+                padding: 0;
+                overflow-x: hidden;
+            }
+            nav {
+                flex-direction: column;
+                padding: 10px 0;
+                background: #333;
+            }
+            nav a {
+                display: block;
+                font-size: 1.2rem;
+                padding: 10px 20px;
+                text-align: center;
+            }
+            header, .hero {
+                padding: 20px;
+                text-align: center;
+            }
+            header h1, .hero h1 {
+                font-size: 2rem;
+                line-height: 1.2;
+            }
+            header p, .hero p {
+                font-size: 1.2rem;
+                margin-top: 10px;
+            }
+            .menu-container, .service-list {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                margin: 0 auto;
+            }
+            .menu-card, .service-item {
+                width: 90%;
+                margin: 10px auto;
+                max-width: 300px;
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+                border-radius: 10px;
+            }
+            img {
+                max-width: 100%;
+                height: auto;
+                border-radius: 10px;
+            }
+            .contact-section, .footer {
+                padding: 20px;
+                text-align: center;
+            }
+            .contact-info p, .footer p {
+                font-size: 1rem;
+                line-height: 1.4;
+                margin: 10px 0;
+            }
+            .contact-button, .hero-btn, .about-btn {
+                display: inline-block;
+                padding: 12px 25px;
+                font-size: 1rem;
+                margin: 10px auto;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            nav a {
+                font-size: 1rem;
+                padding: 8px 15px;
+            }
+            header h1, .hero h1 {
+                font-size: 1.8rem;
+            }
+            header p, .hero p {
+                font-size: 1rem;
+            }
+            .menu-card, .service-item {
+                max-width: 280px;
+            }
+        }
+        </style>
+        
+        <style>
+        @media (max-width: 768px) {
+            /* Enlarge the "İstanbul Catering" section title */
+            header h1, .hero h1 {
+                font-size: 2.5rem;
+                line-height: 1.3;
+                margin-bottom: 15px;
+            }
+        }
+
+        /* Add effect to hide navigation on scroll */
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            transition: top 0.3s ease;
+        }
+
+        .hide-nav {
+            top: -70px;
+        }
+        </style>
+        
+        <style>
+        /* Ensure dropdown menu visibility and interaction */
+        .dropdown {
+            position: relative;
+        }
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: #444;
+            padding: 10px 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+        }
+        .dropdown:hover .dropdown-menu,
+        .dropdown.active .dropdown-menu {
+            display: block;
+        }
+        .dropdown-menu a {
+            display: block;
+            padding: 10px 20px;
+            color: white;
+            text-decoration: none;
+        }
+        .dropdown-menu a:hover {
+            background: #555;
+        }
+        </style>
+        
+            <style>
+            @media (max-width: 768px) {
+                body {
+                    font-size: 14px;
+                    line-height: 1.6;
+                    margin: 0;
+                    padding: 0;
+                    overflow-x: hidden;
+                }
+                nav {
+                    flex-direction: column;
+                    padding: 10px 0;
+                    background: #333;
+                }
+                nav a {
+                    font-size: 1.2rem;
+                    padding: 10px 15px;
+                    text-align: center;
+                }
+                .dropdown {
+                    position: relative;
+                }
+                .dropdown-menu {
+                    display: none;
+                    position: absolute;
+                    top: 100%;
+                    left: 0;
+                    background: #444;
+                    padding: 10px 0;
+                    z-index: 1000;
+                }
+                .dropdown:hover .dropdown-menu,
+                .dropdown.active .dropdown-menu {
+                    display: block;
+                }
+                .dropdown-menu a {
+                    padding: 10px 20px;
+                    color: white;
+                    text-decoration: none;
+                }
+                .dropdown-menu a:hover {
+                    background: #555;
+                }
+            }
+            </style>
+            </head>
+            <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                const dropdowns = document.querySelectorAll(".dropdown");
+                dropdowns.forEach(dropdown => {
+                    dropdown.addEventListener("click", function(event) {
+                        event.stopPropagation();
+                        this.classList.toggle("active");
+                    });
+                });
+                document.addEventListener("click", function() {
+                    dropdowns.forEach(dropdown => dropdown.classList.remove("active"));
+                });
+            });
+            </script>
+            
+        <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const dropdowns = document.querySelectorAll(".dropdown");
+            
+            dropdowns.forEach(dropdown => {
+                dropdown.addEventListener("click", function(event) {
+                    event.stopPropagation();
+                    this.classList.toggle("active");
+                    const menu = this.querySelector(".dropdown-menu");
+                    if (menu.style.display === "block") {
+                        menu.style.display = "none";
+                    } else {
+                        menu.style.display = "block";
+                    }
+                });
+
+                // Close the dropdown if clicked outside
+                document.addEventListener("click", function() {
+                    dropdowns.forEach(dropdown => {
+                        dropdown.classList.remove("active");
+                        const menu = dropdown.querySelector(".dropdown-menu");
+                        if (menu) {
+                            menu.style.display = "none";
+                        }
+                    });
+                });
+            });
+        });
+        </script>
+        
+        <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            let prevScrollPos = window.pageYOffset;
+            const nav = document.querySelector("nav");
+
+            window.onscroll = function() {
+                let currentScrollPos = window.pageYOffset;
+                if (prevScrollPos > currentScrollPos) {
+                    nav.classList.remove("hide-nav");
+                } else {
+                    nav.classList.add("hide-nav");
+                }
+                prevScrollPos = currentScrollPos;
+            };
+
+            // Ensure "Menülerimiz" dropdown works
+            const dropdowns = document.querySelectorAll(".dropdown");
+            dropdowns.forEach(dropdown => {
+                dropdown.addEventListener("click", function() {
+                    const menu = this.querySelector(".dropdown-menu");
+                    if (menu.style.display === "block") {
+                        menu.style.display = "none";
+                    } else {
+                        menu.style.display = "block";
+                    }
+                });
+            });
+        });
+        </script>
+        
+        
+        
+<body>
+    <header>
+        <h1>İstanbul Catering</h1>
+        <p>Profesyonel Catering Hizmetleri</p>
+    </header>
+
+   <nav>
+         <a href="yemekk.html">Ana Sayfa</a>
+        <div class="dropdown">
+            <a href="#services">Hizmetlerimiz</a>
+            <div class="dropdown-menu">
+                <a target="_blank">Menülerimiz</a>
+            </div>
+        </div>
+        <a href="contact.html">İletişim</a>
+    </nav>
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kurumsal Menü Kartları</title>
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            position: relative;
+            background: url('https://i.hizliresim.com/akkyufu.png') no-repeat center center fixed;
+            background-size: cover;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.5);
+            z-index: -1;
+            backdrop-filter: blur(10px);
+        }
+
+        .menu-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+            flex-wrap: wrap;
+        }
+
+        .menu-card {
+            width: 300px;
+            background: linear-gradient(135deg, #ffffff, #f7f7f7);
+            border-radius: 15px;
+            box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        .menu-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            object-position: center;
+            filter: brightness(0.9);
+            transition: filter 0.3s;
+        }
+
+        .menu-card:hover img {
+            filter: brightness(1.1);
+        }
+
+        .menu-card h3 {
+            margin: 15px;
+            font-size: 1.8rem;
+            text-align: center;
+            color: #ff6f61;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+            letter-spacing: 2px;
+            animation: textGlow 1.5s infinite alternate;
+        }
+
+        @keyframes textGlow {
+            0% {
+                text-shadow: 0 0 5px #ff6f61, 0 0 10px #ff6f61, 0 0 20px #ff6f61;
+            }
+            100% {
+                text-shadow: 0 0 2px #ff6f61, 0 0 5px #ff6f61, 0 0 10px #ff6f61;
+            }
+        }
+
+        .menu-card:hover {
+            transform: scale(1.1);
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .contact-button {
+            display: block;
+            margin: 15px auto;
+            padding: 10px 20px;
+            background: #25d366;
+            color: white;
+            text-align: center;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .contact-button:hover {
+            background: #20c257;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .modal-content {
+            background: linear-gradient(135deg, #ffffff, #f7f7f7);
+            border-radius: 20px;
+            padding: 30px;
+            max-width: 500px;
+            width: 90%;
+            text-align: center;
+            position: relative;
+            box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .modal-content h3 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #ff6f61;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .modal-content p {
+            font-size: 1.1rem;
+            color: #333;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: #ff4500;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 35px;
+            height: 35px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .modal-close:hover {
+            background: #ff6347;
+        }
+    </style>
+
+        <style>
+        @media (max-width: 768px) {
+            body {
+                font-size: 90%;
+            }
+            nav {
+                flex-direction: column;
+                text-align: center;
+            }
+            .menu-container, .service-list {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .menu-card, .service-item {
+                width: 90%;
+                margin: 10px auto;
+            }
+            .hero h1, .contact-header h1 {
+                font-size: 2.5rem;
+            }
+            .hero p, .contact-info p {
+                font-size: 1.2rem;
+            }
+            .hero-btn, .about-btn, .contact-button {
+                padding: 10px 20px;
+                font-size: 1rem;
+            }
+        }
+        </style>
+        
+
+        <style>
+        @media (max-width: 768px) {
+            body {
+                font-size: 90%;
+                margin: 0;
+                padding: 0;
+            }
+            nav {
+                flex-direction: column;
+                text-align: center;
+                padding: 10px 0;
+            }
+            nav a {
+                font-size: 1rem;
+                padding: 10px 15px;
+            }
+            header, .hero {
+                padding: 20px;
+                text-align: center;
+            }
+            .menu-container, .service-list {
+                flex-wrap: wrap;
+                justify-content: center;
+                margin: 0 auto;
+            }
+            .menu-card, .service-item {
+                width: 100%;
+                margin: 10px auto;
+                max-width: 300px;
+            }
+            img {
+                max-width: 100%;
+                height: auto;
+            }
+        }
+        </style>
+        
+        <style>
+        @media (max-width: 768px) {
+            /* General adjustments for mobile screens */
+            body {
+                font-size: 14px;
+                line-height: 1.6;
+                margin: 0;
+                padding: 0;
+                overflow-x: hidden;
+            }
+            nav {
+                flex-direction: column;
+                padding: 10px 0;
+                background: #333;
+            }
+            nav a {
+                display: block;
+                font-size: 1.2rem;
+                padding: 10px 20px;
+                text-align: center;
+            }
+            header, .hero {
+                padding: 20px;
+                text-align: center;
+            }
+            header h1, .hero h1 {
+                font-size: 2rem;
+                line-height: 1.2;
+            }
+            header p, .hero p {
+                font-size: 1.2rem;
+                margin-top: 10px;
+            }
+            .menu-container, .service-list {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                margin: 0 auto;
+            }
+            .menu-card, .service-item {
+                width: 90%;
+                margin: 10px auto;
+                max-width: 300px;
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+                border-radius: 10px;
+            }
+            img {
+                max-width: 100%;
+                height: auto;
+                border-radius: 10px;
+            }
+            .contact-section, .footer {
+                padding: 20px;
+                text-align: center;
+            }
+            .contact-info p, .footer p {
+                font-size: 1rem;
+                line-height: 1.4;
+                margin: 10px 0;
+            }
+            .contact-button, .hero-btn, .about-btn {
+                display: inline-block;
+                padding: 12px 25px;
+                font-size: 1rem;
+                margin: 10px auto;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            nav a {
+                font-size: 1rem;
+                padding: 8px 15px;
+            }
+            header h1, .hero h1 {
+                font-size: 1.8rem;
+            }
+            header p, .hero p {
+                font-size: 1rem;
+            }
+            .menu-card, .service-item {
+                max-width: 280px;
+            }
+        }
+        </style>
+        
+        <style>
+        @media (max-width: 768px) {
+            /* Enlarge the "İstanbul Catering" section title */
+            header h1, .hero h1 {
+                font-size: 2.5rem;
+                line-height: 1.3;
+                margin-bottom: 15px;
+            }
+        }
+
+        /* Add effect to hide navigation on scroll */
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            transition: top 0.3s ease;
+        }
+
+        .hide-nav {
+            top: -70px;
+        }
+        </style>
+        
+        <style>
+        /* Ensure dropdown menu visibility and interaction */
+        .dropdown {
+            position: relative;
+        }
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: #444;
+            padding: 10px 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+        }
+        .dropdown:hover .dropdown-menu,
+        .dropdown.active .dropdown-menu {
+            display: block;
+        }
+        .dropdown-menu a {
+            display: block;
+            padding: 10px 20px;
+            color: white;
+            text-decoration: none;
+        }
+        .dropdown-menu a:hover {
+            background: #555;
+        }
+        </style>
+        
+            <style>
+            @media (max-width: 768px) {
+                body {
+                    font-size: 14px;
+                    line-height: 1.6;
+                    margin: 0;
+                    padding: 0;
+                    overflow-x: hidden;
+                }
+                nav {
+                    flex-direction: column;
+                    padding: 10px 0;
+                    background: #333;
+                }
+                nav a {
+                    font-size: 1.2rem;
+                    padding: 10px 15px;
+                    text-align: center;
+                }
+                .dropdown {
+                    position: relative;
+                }
+                .dropdown-menu {
+                    display: none;
+                    position: absolute;
+                    top: 100%;
+                    left: 0;
+                    background: #444;
+                    padding: 10px 0;
+                    z-index: 1000;
+                }
+                .dropdown:hover .dropdown-menu,
+                .dropdown.active .dropdown-menu {
+                    display: block;
+                }
+                .dropdown-menu a {
+                    padding: 10px 20px;
+                    color: white;
+                    text-decoration: none;
+                }
+                .dropdown-menu a:hover {
+                    background: #555;
+                }
+            }
+            </style>
+            </head>
+            <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                const dropdowns = document.querySelectorAll(".dropdown");
+                dropdowns.forEach(dropdown => {
+                    dropdown.addEventListener("click", function(event) {
+                        event.stopPropagation();
+                        this.classList.toggle("active");
+                    });
+                });
+                document.addEventListener("click", function() {
+                    dropdowns.forEach(dropdown => dropdown.classList.remove("active"));
+                });
+            });
+            </script>
+            
+        <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const dropdowns = document.querySelectorAll(".dropdown");
+            
+            dropdowns.forEach(dropdown => {
+                dropdown.addEventListener("click", function(event) {
+                    event.stopPropagation();
+                    this.classList.toggle("active");
+                    const menu = this.querySelector(".dropdown-menu");
+                    if (menu.style.display === "block") {
+                        menu.style.display = "none";
+                    } else {
+                        menu.style.display = "block";
+                    }
+                });
+
+                // Close the dropdown if clicked outside
+                document.addEventListener("click", function() {
+                    dropdowns.forEach(dropdown => {
+                        dropdown.classList.remove("active");
+                        const menu = dropdown.querySelector(".dropdown-menu");
+                        if (menu) {
+                            menu.style.display = "none";
+                        }
+                    });
+                });
+            });
+        });
+        </script>
+        
+        <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            let prevScrollPos = window.pageYOffset;
+            const nav = document.querySelector("nav");
+
+            window.onscroll = function() {
+                let currentScrollPos = window.pageYOffset;
+                if (prevScrollPos > currentScrollPos) {
+                    nav.classList.remove("hide-nav");
+                } else {
+                    nav.classList.add("hide-nav");
+                }
+                prevScrollPos = currentScrollPos;
+            };
+
+            // Ensure "Menülerimiz" dropdown works
+            const dropdowns = document.querySelectorAll(".dropdown");
+            dropdowns.forEach(dropdown => {
+                dropdown.addEventListener("click", function() {
+                    const menu = this.querySelector(".dropdown-menu");
+                    if (menu.style.display === "block") {
+                        menu.style.display = "none";
+                    } else {
+                        menu.style.display = "block";
+                    }
+                });
+            });
+        });
+        </script>
+        
+        
+        
+<body>
+    <div class="overlay"></div>
+
+    <div class="menu-container">
+        <div class="menu-card" onclick="openModal(1)">
+            <img src="https://i.hizliresim.com/78190a4.jpg" alt="Kurumsal Menü 1">
+            <h3>Kurumsal Menü 1</h3>
+            <a href="https://wa.me/905345769457" class="contact-button" target="_blank">Detaylı Bilgi İçin Bize Ulaşın</a>
+        </div>
+        <div class="menu-card" onclick="openModal(2)">
+            <img src="https://i.hizliresim.com/oah33b7.png" alt="Kurumsal Menü 2">
+            <h3>Kurumsal Menü 2</h3>
+            <a href="https://wa.me/905345769457" class="contact-button" target="_blank">Detaylı Bilgi İçin Bize Ulaşın</a>
+        </div>
+        <div class="menu-card" onclick="openModal(3)">
+            <img src="https://i.hizliresim.com/f2n7ksi.png" alt="Kurumsal Menü 3">
+            <h3>Kurumsal Menü 3</h3>
+            <a href="https://wa.me/905345769457" class="contact-button" target="_blank">Detaylı Bilgi İçin Bize Ulaşın</a>
+        </div>
+    </div>
+
+    <script>
+        function openModal(menuId) {
+            document.getElementById(`modal${menuId}`).style.display = 'flex';
+        }
+
+        function closeModal(menuId) {
+            document.getElementById(`modal${menuId}`).style.display = 'none';
+        }
+    </script>
+
+    <div class="modal" id="modal1">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal(1)">&times;</button>
+            <h3>Kurumsal Menü 1</h3>
+            <p>Detaylı menü açıklaması burada yer alacak.</p>
+        </div>
+    </div>
+
+    <div class="modal" id="modal2">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal(2)">&times;</button>
+            <h3>Kurumsal Menü 2</h3>
+            <p>Detaylı menü açıklaması burada yer alacak.</p>
+        </div>
+    </div>
+
+    <div class="modal" id="modal3">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal(3)">&times;</button>
+            <h3>Kurumsal Menü 3</h3>
+            <p>Detaylı menü açıklaması burada yer alacak.</p>
+        </div>
+    </div>
+</body>
+</html>
+
+
+<footer style="position: relative; padding: 30px; text-align: center; font-family: 'Montserrat', sans-serif; color: #fff; background: rgba(0, 0, 0, 0.9); box-shadow: 0 0 20px #4CAF50, 0 0 40px #FFD700, 0 0 60px #FF4500; animation: neon-border 3s infinite;">
+    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: url('https://i.hizliresim.com/elewexq.png') center/cover no-repeat; opacity: 0.2; animation: background-fade 5s infinite; z-index: 1;"></div>
+    <div style="position: relative; z-index: 2; max-width: 800px; margin: 0 auto;">
+        <p style="margin: 0 0 20px; font-size: 20px; font-weight: 600; letter-spacing: 1px; text-shadow: 0 0 15px #4CAF50, 0 0 25px #FFD700, 0 0 35px #FF4500;">
+            &copy; <span style="color: #FFD700; font-size: 22px;">2024</span> Tüm Hakları Saklıdır. 
+            <a href="https://www.istanbulcatering.com" style="color: #4CAF50; text-decoration: none; font-weight: bold; text-shadow: 0 0 15px #4CAF50, 0 0 25px #FFD700, 0 0 35px #FF4500; transition: color 0.3s ease; font-size: 18px;" onmouseover="this.style.color='#FFD700';" onmouseout="this.style.color='#4CAF50';">İstanbul Catering</a>
+        </p>
+        <ul style="list-style: none; padding: 0; margin: 0 0 20px; display: flex; justify-content: center; gap: 20px;">
+            <li>
+                <a href="https://wa.me/905345769457" style="color: #FFD700; font-size: 18px; text-decoration: none; padding: 12px 25px; border: 2px solid #FFD700; border-radius: 30px; text-shadow: 0 0 15px #FFD700, 0 0 25px #FF4500, 0 0 35px #4CAF50; font-weight: 500; transition: all 0.3s ease;" onmouseover="this.style.backgroundColor='#FFD700'; this.style.color='#000';" onmouseout="this.style.backgroundColor='transparent'; this.style.color='#FFD700';">
+                    İletişim
+                </a>
+            </li>
+            <li>
+                <a href="https://www.instagram.com/erenllhan/" style="color: #FF4500; font-size: 18px; text-decoration: none; padding: 12px 25px; border: 2px solid #FF4500; border-radius: 30px; text-shadow: 0 0 15px #FF4500, 0 0 25px #FFD700, 0 0 35px #4CAF50; font-weight: 500; transition: all 0.3s ease;" onmouseover="this.style.backgroundColor='#FF4500'; this.style.color='#000';" onmouseout="this.style.backgroundColor='transparent'; this.style.color='#FF4500';">
+                    Instagram
+                </a>
+            </li>
+        </ul>
+        <a href="https://www.instagram.com/erenllhan/" target="_blank" style="font-size: 26px; color: #4CAF50; text-decoration: none; display: inline-block; transition: transform 0.3s ease, color 0.3s ease; text-shadow: 0 0 15px #4CAF50, 0 0 25px #FFD700, 0 0 35px #FF4500; font-weight: 600;" onmouseover="this.style.color='#FFD700'; this.style.transform='scale(1.2)';" onmouseout="this.style.color='#4CAF50'; this.style.transform='scale(1)';">
+            <i class="fab fa-instagram"></i>
+        </a>
+    </div>
+</footer>
+
+<style>
+@keyframes neon-border {
+    0%, 100% {
+        box-shadow: 0 0 20px #4CAF50, 0 0 40px #FFD700, 0 0 60px #FF4500;
+    }
+    50% {
+        box-shadow: 0 0 40px #FFD700, 0 0 60px #FF4500, 0 0 80px #4CAF50;
+    }
+}
+
+@keyframes background-fade {
+    0%, 100% {
+        opacity: 0.2;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+</style>
+
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>

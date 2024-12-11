@@ -1,0 +1,2245 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İstanbul Catering</title>
+    <!-- Google Fontlar -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Lobster&display=swap" rel="stylesheet">
+    <style>
+        /* Genel Ayarlar */
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #111;
+            color: white;
+        }
+
+        /* Header Bölümü */
+        header {
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+            background: url('https://i.hizliresim.com/rier4to.png') no-repeat center center/cover;
+            box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
+            position: relative;
+        }
+
+        header h1 {
+            font-family: 'Lobster', cursive;
+            font-size: 4rem;
+            margin: 0;
+            text-shadow: 0 0 5px #fff, 0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 40px #ff00ff, 0 0 80px #ff00ff;
+            animation: neon-flicker 1.5s infinite alternate;
+        }
+
+        header p {
+            font-size: 1.5rem;
+            margin-top: 15px;
+            font-weight: 500;
+            text-shadow: 0 0 5px #fff, 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 40px #00ffff, 0 0 80px #00ffff;
+            animation: neon-glow 2s infinite alternate;
+        }
+
+        /* Neon Animasyonlar */
+        @keyframes neon-flicker {
+            0%, 49% {
+                opacity: 1;
+                text-shadow: 0 0 5px #fff, 0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 40px #ff00ff, 0 0 80px #ff00ff;
+            }
+            50%, 100% {
+                opacity: 0.8;
+                text-shadow: 0 0 2px #fff, 0 0 8px #ff00ff, 0 0 16px #ff00ff, 0 0 32px #ff00ff, 0 0 64px #ff00ff;
+            }
+        }
+
+        @keyframes neon-glow {
+            0%, 49% {
+                opacity: 1;
+                text-shadow: 0 0 5px #fff, 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 40px #00ffff, 0 0 80px #00ffff;
+            }
+            50%, 100% {
+                opacity: 0.8;
+                text-shadow: 0 0 2px #fff, 0 0 8px #00ffff, 0 0 16px #00ffff, 0 0 32px #00ffff, 0 0 64px #00ffff;
+            }
+        }
+
+        /* Navigation */
+        nav {
+            display: flex;
+            justify-content: center;
+            background: #333;
+            padding: 10px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        nav a {
+            color: white;
+            padding: 14px 20px;
+            text-decoration: none;
+            font-family: 'Lobster', cursive;
+            font-size: 1.5rem;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            position: relative;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+        }
+
+        nav a:hover {
+            color: #FFD700;
+            text-shadow: 2px 2px 10px rgba(255, 215, 0, 0.7);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: -5px;
+            width: 0;
+            height: 3px;
+            background: #FFD700;
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: #444;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .dropdown-menu a {
+            display: block;
+            padding: 10px 20px;
+            color: white;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .dropdown-menu a:hover {
+            background: #555;
+        }
+
+        .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+
+        /* Hero Bölümü */
+        .hero {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(34, 34, 34, 0.8)), url('https://i.hizliresim.com/sv0s8fg.png') no-repeat center center/cover;
+            color: white;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .hero h1 {
+            font-family: 'Lobster', cursive;
+            font-size: 3.5rem;
+            margin: 0;
+            text-shadow: 0 0 5px #fff, 0 0 10px #ff4500, 0 0 20px #ff4500, 0 0 40px #ff4500, 0 0 80px #ff4500;
+            animation: glow-effect 1.5s infinite alternate;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            margin: 20px 0;
+            font-weight: 500;
+            text-shadow: 0 0 5px #fff, 0 0 10px #00ff7f, 0 0 20px #00ff7f, 0 0 40px #00ff7f, 0 0 80px #00ff7f;
+            animation: glow-effect 2s infinite alternate;
+        }
+
+        .hero-btn {
+            display: inline-block;
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            color: #fff;
+            background: #ff4500;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+            text-shadow: 0 0 5px #fff, 0 0 10px #ff4500, 0 0 20px #ff4500;
+        }
+
+        .hero-btn:hover {
+            background: #ff6347;
+            text-shadow: 0 0 10px #fff, 0 0 20px #ff6347;
+            box-shadow: 0 0 20px #ff6347;
+        }
+
+        @keyframes glow-effect {
+            0%, 49% {
+                text-shadow: 0 0 5px #fff, 0 0 10px #ff4500, 0 0 20px #ff4500;
+            }
+            50%, 100% {
+                text-shadow: 0 0 2px #fff, 0 0 8px #ff4500, 0 0 16px #ff4500;
+            }
+        }
+    </style>
+
+        <style>
+        @media (max-width: 768px) {
+            body {
+                font-size: 90%;
+                margin: 0;
+                padding: 0;
+            }
+            nav {
+                flex-direction: column;
+                text-align: center;
+                padding: 10px 0;
+            }
+            nav a {
+                font-size: 1rem;
+                padding: 10px 15px;
+            }
+            header, .hero {
+                padding: 20px;
+                text-align: center;
+            }
+            .menu-container, .service-list {
+                flex-wrap: wrap;
+                justify-content: center;
+                margin: 0 auto;
+            }
+            .menu-card, .service-item {
+                width: 100%;
+                margin: 10px auto;
+                max-width: 300px;
+            }
+            img {
+                max-width: 100%;
+                height: auto;
+            }
+        }
+        </style>
+        
+        <style>
+        @media (max-width: 768px) {
+            /* General adjustments for mobile screens */
+            body {
+                font-size: 14px;
+                line-height: 1.6;
+                margin: 0;
+                padding: 0;
+                overflow-x: hidden;
+            }
+            nav {
+                flex-direction: column;
+                padding: 10px 0;
+                background: #333;
+            }
+            nav a {
+                display: block;
+                font-size: 1.2rem;
+                padding: 10px 20px;
+                text-align: center;
+            }
+            header, .hero {
+                padding: 20px;
+                text-align: center;
+            }
+            header h1, .hero h1 {
+                font-size: 2rem;
+                line-height: 1.2;
+            }
+            header p, .hero p {
+                font-size: 1.2rem;
+                margin-top: 10px;
+            }
+            .menu-container, .service-list {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                margin: 0 auto;
+            }
+            .menu-card, .service-item {
+                width: 90%;
+                margin: 10px auto;
+                max-width: 300px;
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+                border-radius: 10px;
+            }
+            img {
+                max-width: 100%;
+                height: auto;
+                border-radius: 10px;
+            }
+            .contact-section, .footer {
+                padding: 20px;
+                text-align: center;
+            }
+            .contact-info p, .footer p {
+                font-size: 1rem;
+                line-height: 1.4;
+                margin: 10px 0;
+            }
+            .contact-button, .hero-btn, .about-btn {
+                display: inline-block;
+                padding: 12px 25px;
+                font-size: 1rem;
+                margin: 10px auto;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            nav a {
+                font-size: 1rem;
+                padding: 8px 15px;
+            }
+            header h1, .hero h1 {
+                font-size: 1.8rem;
+            }
+            header p, .hero p {
+                font-size: 1rem;
+            }
+            .menu-card, .service-item {
+                max-width: 280px;
+            }
+        }
+        </style>
+        
+        <style>
+        @media (max-width: 768px) {
+            /* Enlarge the "İstanbul Catering" section title */
+            header h1, .hero h1 {
+                font-size: 2.5rem;
+                line-height: 1.3;
+                margin-bottom: 15px;
+            }
+        }
+
+        /* Add effect to hide navigation on scroll */
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            transition: top 0.3s ease;
+        }
+
+        .hide-nav {
+            top: -70px;
+        }
+        </style>
+        
+        <style>
+        /* Ensure dropdown menu visibility and interaction */
+        .dropdown {
+            position: relative;
+        }
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: #444;
+            padding: 10px 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+        }
+        .dropdown:hover .dropdown-menu,
+        .dropdown.active .dropdown-menu {
+            display: block;
+        }
+        .dropdown-menu a {
+            display: block;
+            padding: 10px 20px;
+            color: white;
+            text-decoration: none;
+        }
+        .dropdown-menu a:hover {
+            background: #555;
+        }
+        </style>
+        
+            <style>
+            @media (max-width: 768px) {
+                body {
+                    font-size: 14px;
+                    line-height: 1.6;
+                    margin: 0;
+                    padding: 0;
+                    overflow-x: hidden;
+                }
+                nav {
+                    flex-direction: column;
+                    padding: 10px 0;
+                    background: #333;
+                }
+                nav a {
+                    font-size: 1.2rem;
+                    padding: 10px 15px;
+                    text-align: center;
+                }
+                .dropdown {
+                    position: relative;
+                }
+                .dropdown-menu {
+                    display: none;
+                    position: absolute;
+                    top: 100%;
+                    left: 0;
+                    background: #444;
+                    padding: 10px 0;
+                    z-index: 1000;
+                }
+                .dropdown:hover .dropdown-menu,
+                .dropdown.active .dropdown-menu {
+                    display: block;
+                }
+                .dropdown-menu a {
+                    padding: 10px 20px;
+                    color: white;
+                    text-decoration: none;
+                }
+                .dropdown-menu a:hover {
+                    background: #555;
+                }
+            }
+            </style>
+            </head>
+            <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                const dropdowns = document.querySelectorAll(".dropdown");
+                dropdowns.forEach(dropdown => {
+                    dropdown.addEventListener("click", function(event) {
+                        event.stopPropagation();
+                        this.classList.toggle("active");
+                    });
+                });
+                document.addEventListener("click", function() {
+                    dropdowns.forEach(dropdown => dropdown.classList.remove("active"));
+                });
+            });
+            </script>
+            
+        <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const dropdowns = document.querySelectorAll(".dropdown");
+            
+            dropdowns.forEach(dropdown => {
+                dropdown.addEventListener("click", function(event) {
+                    event.stopPropagation();
+                    this.classList.toggle("active");
+                    const menu = this.querySelector(".dropdown-menu");
+                    if (menu.style.display === "block") {
+                        menu.style.display = "none";
+                    } else {
+                        menu.style.display = "block";
+                    }
+                });
+
+                // Close the dropdown if clicked outside
+                document.addEventListener("click", function() {
+                    dropdowns.forEach(dropdown => {
+                        dropdown.classList.remove("active");
+                        const menu = dropdown.querySelector(".dropdown-menu");
+                        if (menu) {
+                            menu.style.display = "none";
+                        }
+                    });
+                });
+            });
+        });
+        </script>
+        
+        <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            let prevScrollPos = window.pageYOffset;
+            const nav = document.querySelector("nav");
+
+            window.onscroll = function() {
+                let currentScrollPos = window.pageYOffset;
+                if (prevScrollPos > currentScrollPos) {
+                    nav.classList.remove("hide-nav");
+                } else {
+                    nav.classList.add("hide-nav");
+                }
+                prevScrollPos = currentScrollPos;
+            };
+
+            // Ensure "Menülerimiz" dropdown works
+            const dropdowns = document.querySelectorAll(".dropdown");
+            dropdowns.forEach(dropdown => {
+                dropdown.addEventListener("click", function() {
+                    const menu = this.querySelector(".dropdown-menu");
+                    if (menu.style.display === "block") {
+                        menu.style.display = "none";
+                    } else {
+                        menu.style.display = "block";
+                    }
+                });
+            });
+        });
+        </script>
+        
+        
+        
+<body>
+    <header>
+        <h1>İstanbul Catering</h1>
+        <p>Profesyonel Catering Hizmetleri</p>
+    </header>
+
+   <nav>
+        <a href="#home">Ana Sayfa</a>
+        <a href="#about">Hakkımızda</a>
+        <div class="dropdown">
+            <a href="#services">Hizmetlerimiz</a>
+            <div class="dropdown-menu">
+                <a href="menus.html">Menülerimiz</a>
+            </div>
+        </div>
+        <a href="#faq">Sıkça Sorulan Sorular</a>
+        <a href="contact.html">İletişim</a>
+    </nav>
+
+    <section id="home" class="hero">
+        <div>
+            <h1>En İyi Catering Deneyimi</h1>
+            <p>Kurumsal Yemeklerinizi Ve Etkinliklerinizi Taçlandırıyoruz!</p>
+            <a href="#services" class="hero-btn">Hizmetlerimizi Keşfedin</a>
+        </div>
+    </section>
+</body>
+</html>
+
+
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hakkımızda - İstanbul Catering</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <style>
+        /* Genel Ayarlar */
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.8;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+
+        /* Hakkımızda Bölümü */
+        #about {
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)), 
+                        url('https://i.hizliresim.com/31zsm02.png') no-repeat center center;
+            background-size: cover;
+            padding: 100px 20px;
+            color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            transition: background-position 0.1s ease;
+        }
+
+        #about .content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+            position: relative;
+            z-index: 1;
+        }
+
+        #about h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            color: #FFD700;
+            margin-bottom: 30px;
+            text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.7);
+        }
+
+        #about p {
+            font-size: 1.2rem;
+            color: #f1f1f1;
+            margin-bottom: 20px;
+            text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+        }
+
+        #about h3 {
+            font-size: 2rem;
+            color: #FFD700;
+            margin-top: 40px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+        }
+
+        #about ul {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0;
+        }
+
+        #about ul li {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            color: #f0f0f0;
+            position: relative;
+            padding-left: 40px;
+            text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+        }
+
+        #about ul li::before {
+            content: '✨';
+            position: absolute;
+            left: 0;
+            font-size: 1.5rem;
+            color: #FFD700;
+        }
+
+        .about-btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 15px 40px;
+            font-size: 1.2rem;
+            color: white;
+            background: linear-gradient(135deg, #FF5733, #C70039);
+            text-decoration: none;
+            border-radius: 50px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .about-btn:hover {
+            transform: translateY(-5px);
+            background: linear-gradient(135deg, #C70039, #FF5733);
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.6);
+        }
+
+        #about::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 0;
+        }
+
+        @media (max-width: 768px) {
+            #about h2 {
+                font-size: 2.8rem;
+            }
+
+            #about p, #about ul li {
+                font-size: 1rem;
+            }
+
+            .about-btn {
+                font-size: 1rem;
+                padding: 10px 30px;
+            }
+        }
+    </style>
+
+        <style>
+        @media (max-width: 768px) {
+            body {
+                font-size: 90%;
+                margin: 0;
+                padding: 0;
+            }
+            nav {
+                flex-direction: column;
+                text-align: center;
+                padding: 10px 0;
+            }
+            nav a {
+                font-size: 1rem;
+                padding: 10px 15px;
+            }
+            header, .hero {
+                padding: 20px;
+                text-align: center;
+            }
+            .menu-container, .service-list {
+                flex-wrap: wrap;
+                justify-content: center;
+                margin: 0 auto;
+            }
+            .menu-card, .service-item {
+                width: 100%;
+                margin: 10px auto;
+                max-width: 300px;
+            }
+            img {
+                max-width: 100%;
+                height: auto;
+            }
+        }
+        </style>
+        
+        <style>
+        @media (max-width: 768px) {
+            /* General adjustments for mobile screens */
+            body {
+                font-size: 14px;
+                line-height: 1.6;
+                margin: 0;
+                padding: 0;
+                overflow-x: hidden;
+            }
+            nav {
+                flex-direction: column;
+                padding: 10px 0;
+                background: #333;
+            }
+            nav a {
+                display: block;
+                font-size: 1.2rem;
+                padding: 10px 20px;
+                text-align: center;
+            }
+            header, .hero {
+                padding: 20px;
+                text-align: center;
+            }
+            header h1, .hero h1 {
+                font-size: 2rem;
+                line-height: 1.2;
+            }
+            header p, .hero p {
+                font-size: 1.2rem;
+                margin-top: 10px;
+            }
+            .menu-container, .service-list {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                margin: 0 auto;
+            }
+            .menu-card, .service-item {
+                width: 90%;
+                margin: 10px auto;
+                max-width: 300px;
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+                border-radius: 10px;
+            }
+            img {
+                max-width: 100%;
+                height: auto;
+                border-radius: 10px;
+            }
+            .contact-section, .footer {
+                padding: 20px;
+                text-align: center;
+            }
+            .contact-info p, .footer p {
+                font-size: 1rem;
+                line-height: 1.4;
+                margin: 10px 0;
+            }
+            .contact-button, .hero-btn, .about-btn {
+                display: inline-block;
+                padding: 12px 25px;
+                font-size: 1rem;
+                margin: 10px auto;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            nav a {
+                font-size: 1rem;
+                padding: 8px 15px;
+            }
+            header h1, .hero h1 {
+                font-size: 1.8rem;
+            }
+            header p, .hero p {
+                font-size: 1rem;
+            }
+            .menu-card, .service-item {
+                max-width: 280px;
+            }
+        }
+        </style>
+        
+        <style>
+        @media (max-width: 768px) {
+            /* Enlarge the "İstanbul Catering" section title */
+            header h1, .hero h1 {
+                font-size: 2.5rem;
+                line-height: 1.3;
+                margin-bottom: 15px;
+            }
+        }
+
+        /* Add effect to hide navigation on scroll */
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            transition: top 0.3s ease;
+        }
+
+        .hide-nav {
+            top: -70px;
+        }
+        </style>
+        
+        <style>
+        /* Ensure dropdown menu visibility and interaction */
+        .dropdown {
+            position: relative;
+        }
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: #444;
+            padding: 10px 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+        }
+        .dropdown:hover .dropdown-menu,
+        .dropdown.active .dropdown-menu {
+            display: block;
+        }
+        .dropdown-menu a {
+            display: block;
+            padding: 10px 20px;
+            color: white;
+            text-decoration: none;
+        }
+        .dropdown-menu a:hover {
+            background: #555;
+        }
+        </style>
+        
+            <style>
+            @media (max-width: 768px) {
+                body {
+                    font-size: 14px;
+                    line-height: 1.6;
+                    margin: 0;
+                    padding: 0;
+                    overflow-x: hidden;
+                }
+                nav {
+                    flex-direction: column;
+                    padding: 10px 0;
+                    background: #333;
+                }
+                nav a {
+                    font-size: 1.2rem;
+                    padding: 10px 15px;
+                    text-align: center;
+                }
+                .dropdown {
+                    position: relative;
+                }
+                .dropdown-menu {
+                    display: none;
+                    position: absolute;
+                    top: 100%;
+                    left: 0;
+                    background: #444;
+                    padding: 10px 0;
+                    z-index: 1000;
+                }
+                .dropdown:hover .dropdown-menu,
+                .dropdown.active .dropdown-menu {
+                    display: block;
+                }
+                .dropdown-menu a {
+                    padding: 10px 20px;
+                    color: white;
+                    text-decoration: none;
+                }
+                .dropdown-menu a:hover {
+                    background: #555;
+                }
+            }
+            </style>
+            </head>
+            <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                const dropdowns = document.querySelectorAll(".dropdown");
+                dropdowns.forEach(dropdown => {
+                    dropdown.addEventListener("click", function(event) {
+                        event.stopPropagation();
+                        this.classList.toggle("active");
+                    });
+                });
+                document.addEventListener("click", function() {
+                    dropdowns.forEach(dropdown => dropdown.classList.remove("active"));
+                });
+            });
+            </script>
+            
+        <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const dropdowns = document.querySelectorAll(".dropdown");
+            
+            dropdowns.forEach(dropdown => {
+                dropdown.addEventListener("click", function(event) {
+                    event.stopPropagation();
+                    this.classList.toggle("active");
+                    const menu = this.querySelector(".dropdown-menu");
+                    if (menu.style.display === "block") {
+                        menu.style.display = "none";
+                    } else {
+                        menu.style.display = "block";
+                    }
+                });
+
+                // Close the dropdown if clicked outside
+                document.addEventListener("click", function() {
+                    dropdowns.forEach(dropdown => {
+                        dropdown.classList.remove("active");
+                        const menu = dropdown.querySelector(".dropdown-menu");
+                        if (menu) {
+                            menu.style.display = "none";
+                        }
+                    });
+                });
+            });
+        });
+        </script>
+        
+        <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            let prevScrollPos = window.pageYOffset;
+            const nav = document.querySelector("nav");
+
+            window.onscroll = function() {
+                let currentScrollPos = window.pageYOffset;
+                if (prevScrollPos > currentScrollPos) {
+                    nav.classList.remove("hide-nav");
+                } else {
+                    nav.classList.add("hide-nav");
+                }
+                prevScrollPos = currentScrollPos;
+            };
+
+            // Ensure "Menülerimiz" dropdown works
+            const dropdowns = document.querySelectorAll(".dropdown");
+            dropdowns.forEach(dropdown => {
+                dropdown.addEventListener("click", function() {
+                    const menu = this.querySelector(".dropdown-menu");
+                    if (menu.style.display === "block") {
+                        menu.style.display = "none";
+                    } else {
+                        menu.style.display = "block";
+                    }
+                });
+            });
+        });
+        </script>
+        
+        
+        
+<body>
+    <!-- Hakkımızda Bölümü -->
+    <section id="about">
+        <div class="content">
+             <h2>İstanbul Catering</h2>
+            <p>
+                İstanbul Catering, yılların deneyimi ve özenle hazırlanmış hizmet anlayışıyla özel günlerinizi unutulmaz kılmak için burada.
+                Düğünlerden kurumsal etkinliklere, nişanlardan özel davetlere kadar her türlü organizasyon için eksiksiz catering çözümleri sunuyoruz.
+            </p>
+            <p>
+                Yaratıcılık, kalite ve müşteri memnuniyeti, hizmetlerimizin temelini oluşturur. Taze malzemelerle hazırlanan menülerimiz, 
+                estetik sunumlarımız ve profesyonel ekibimizle her detayda fark yaratıyoruz. Sadece lezzet değil, aynı zamanda güvenilirlik 
+                ve kalite de vaat ediyoruz.
+            </p>
+            <p>
+                Her etkinliğin kendine özgü bir hikayesi olduğuna inanıyoruz. Bu yüzden, ihtiyaçlarınıza özel çözümler sunarak etkinliklerinize değer katıyoruz.
+                Ilhanlar Catering olarak, sizin için "lezzetli anılar" yaratmayı bir görev biliyoruz.
+            </p>
+            <h3>Neden İstanbul Catering?</h3>
+            <ul>
+                <li>Taze ve kaliteli malzemelerle hazırlanan özgün menüler.</li>
+                <li>Deneyimli ve profesyonel bir ekip.</li>
+                <li>Her etkinliğe özel, kişiselleştirilmiş çözümler.</li>
+                <li>Zamanında teslimat ve kusursuz organizasyon.</li>
+            </ul>
+            <p>
+                İstanbul Catering olarak, özel günlerinizi daha özel hale getirmek için sizinleyiz. 
+                <strong>Lezzeti bizimle keşfedin!</strong>
+            </p>
+            <a href="#services" class="about-btn">Hizmetlerimizi Keşfedin</a>
+        </div>
+    </section>
+    <script>
+        // Fare hareketine göre arka planın kayması
+        document.addEventListener("mousemove", function(event) {
+            
+			const aboutSection = document.getElementById('about');
+            const x = (event.clientX / window.innerWidth) * 10; // Yatay hareket
+            const y = (event.clientY / window.innerHeight) * 10; // Dikey hareket
+            aboutSection.style.backgroundPosition = `${50 + x}% ${50 + y}%`;
+        });
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hizmetlerimiz - Catering Şirketi</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Lobster&display=swap" rel="stylesheet">
+    <style>
+        /* Genel Ayarlar */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.8;
+            background-color: #f9f9f9;
+        }
+
+        /* Hizmetler Bölümü */
+        #services {
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)), 
+                        url('https://i.hizliresim.com/8fj0290.jpg') no-repeat center center;
+            background-size: cover;
+            padding: 80px 20px;
+            color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            animation: moveBackground 10s infinite linear;
+        }
+
+        /* Arka Plan Animasyonu */
+        @keyframes moveBackground {
+            0% {
+                background-position: 50% 50%;
+            }
+            25% {
+                background-position: 50% 60%;
+            }
+            50% {
+                background-position: 50% 50%;
+            }
+            75% {
+                background-position: 50% 40%;
+            }
+            100% {
+                background-position: 50% 50%;
+            }
+        }
+
+        /* Arka Plan Üstü Katman */
+        #services::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 0;
+        }
+
+        #services h2 {
+            font-family: 'Lobster', cursive;
+            font-size: 3.5rem;
+            color: #FFD700;
+            text-transform: uppercase;
+            margin-bottom: 50px;
+            z-index: 1;
+            position: relative;
+            text-shadow: 0 0 5px #FFD700, 0 0 10px #FFD700, 0 0 20px #FFD700, 0 0 40px #FF8C00, 0 0 80px #FF4500;
+            animation: neonBlink 1.5s infinite alternate;
+        }
+
+        @keyframes neonBlink {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.5;
+            }
+        }
+
+        .service-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .service-item {
+            background: white;
+            color: black;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            padding: 30px 20px;
+            width: 300px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            font-size: 1.1rem;
+        }
+
+        .service-item:hover {
+            transform: translateY(-10px) scale(1.05);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+        }
+
+        .service-item .icon {
+            font-size: 3rem;
+            color: #FFD700;
+            margin-bottom: 15px;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .service-item h3 {
+            font-size: 1.7rem;
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        .service-item p {
+            font-size: 1rem;
+            color: #555;
+        }
+
+        .contact-section {
+            margin-top: 50px;
+            padding: 40px;
+            background: url('https://i.hizliresim.com/1nspb6b.png') no-repeat center center;
+            background-size: cover;
+            position: relative;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            color: white;
+            overflow: hidden;
+            z-index: 1;
+            animation: backgroundBlink 3s infinite;
+        }
+
+        @keyframes backgroundBlink {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.5;
+            }
+        }
+
+        .contact-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 0;
+        }
+
+        .contact-section h3 {
+            font-size: 2.5rem;
+            color: #FFD700;
+            font-weight: 600;
+            font-family: 'Poppins', sans-serif;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            position: relative;
+            z-index: 1;
+        }
+
+        .contact-section p {
+            font-size: 1.3rem;
+            color: #fff;
+            margin-bottom: 30px;
+            font-style: italic;
+            position: relative;
+            z-index: 1;
+            text-shadow: 0 0 5px #FFFFFF, 0 0 10px #FFFFFF, 0 0 20px #FFFFFF, 0 0 40px #FFFFFF, 0 0 80px #CCCCFF;
+            animation: neonTextBlink 1.5s infinite alternate;
+        }
+
+        @keyframes neonTextBlink {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.7;
+            }
+        }
+
+        .contact-section a {
+            font-size: 1.4rem;
+            font-weight: bold;
+            font-family: 'Poppins', sans-serif;
+            color: #FFD700;
+            text-decoration: none;
+            padding: 15px 30px;
+            background-color: transparent;
+            border: 2px solid #FFD700;
+            border-radius: 25px;
+            transition: transform 0.3s, text-shadow 0.3s;
+            text-shadow: 0 0 5px #FFD700, 0 0 10px #FFD700, 0 0 20px #FFD700, 0 0 40px #FF8C00, 0 0 80px #FF4500;
+            position: relative;
+            z-index: 1;
+            animation: neonEffectBright 2s infinite alternate;
+        }
+
+        @keyframes neonEffectBright {
+            0% {
+                text-shadow: 0 0 10px #FFD700, 0 0 20px #FFD700, 0 0 30px #FFD700, 0 0 50px #FF8C00, 0 0 100px #FF4500;
+            }
+            100% {
+                text-shadow: 0 0 20px #FFD700, 0 0 40px #FFD700, 0 0 60px #FFD700, 0 0 80px #FF8C00, 0 0 150px #FF4500;
+            }
+        }
+
+        .contact-section a:hover {
+            transform: scale(1.1);
+        }
+
+        /* Responsive Tasarım */
+        @media (max-width: 768px) {
+            #services h2 {
+                font-size: 2.8rem;
+            }
+
+            .service-item {
+                width: 90%;
+            }
+
+            .contact-section h3 {
+                font-size: 2rem;
+            }
+
+            .contact-section p {
+                font-size: 1.2rem;
+            }
+
+            .contact-section a {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+
+        <style>
+        @media (max-width: 768px) {
+            body {
+                font-size: 90%;
+                margin: 0;
+                padding: 0;
+            }
+            nav {
+                flex-direction: column;
+                text-align: center;
+                padding: 10px 0;
+            }
+            nav a {
+                font-size: 1rem;
+                padding: 10px 15px;
+            }
+            header, .hero {
+                padding: 20px;
+                text-align: center;
+            }
+            .menu-container, .service-list {
+                flex-wrap: wrap;
+                justify-content: center;
+                margin: 0 auto;
+            }
+            .menu-card, .service-item {
+                width: 100%;
+                margin: 10px auto;
+                max-width: 300px;
+            }
+            img {
+                max-width: 100%;
+                height: auto;
+            }
+        }
+        </style>
+        
+        <style>
+        @media (max-width: 768px) {
+            /* General adjustments for mobile screens */
+            body {
+                font-size: 14px;
+                line-height: 1.6;
+                margin: 0;
+                padding: 0;
+                overflow-x: hidden;
+            }
+            nav {
+                flex-direction: column;
+                padding: 10px 0;
+                background: #333;
+            }
+            nav a {
+                display: block;
+                font-size: 1.2rem;
+                padding: 10px 20px;
+                text-align: center;
+            }
+            header, .hero {
+                padding: 20px;
+                text-align: center;
+            }
+            header h1, .hero h1 {
+                font-size: 2rem;
+                line-height: 1.2;
+            }
+            header p, .hero p {
+                font-size: 1.2rem;
+                margin-top: 10px;
+            }
+            .menu-container, .service-list {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                margin: 0 auto;
+            }
+            .menu-card, .service-item {
+                width: 90%;
+                margin: 10px auto;
+                max-width: 300px;
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+                border-radius: 10px;
+            }
+            img {
+                max-width: 100%;
+                height: auto;
+                border-radius: 10px;
+            }
+            .contact-section, .footer {
+                padding: 20px;
+                text-align: center;
+            }
+            .contact-info p, .footer p {
+                font-size: 1rem;
+                line-height: 1.4;
+                margin: 10px 0;
+            }
+            .contact-button, .hero-btn, .about-btn {
+                display: inline-block;
+                padding: 12px 25px;
+                font-size: 1rem;
+                margin: 10px auto;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            nav a {
+                font-size: 1rem;
+                padding: 8px 15px;
+            }
+            header h1, .hero h1 {
+                font-size: 1.8rem;
+            }
+            header p, .hero p {
+                font-size: 1rem;
+            }
+            .menu-card, .service-item {
+                max-width: 280px;
+            }
+        }
+        </style>
+        
+        <style>
+        @media (max-width: 768px) {
+            /* Enlarge the "İstanbul Catering" section title */
+            header h1, .hero h1 {
+                font-size: 2.5rem;
+                line-height: 1.3;
+                margin-bottom: 15px;
+            }
+        }
+
+        /* Add effect to hide navigation on scroll */
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            transition: top 0.3s ease;
+        }
+
+        .hide-nav {
+            top: -70px;
+        }
+        </style>
+        
+        <style>
+        /* Ensure dropdown menu visibility and interaction */
+        .dropdown {
+            position: relative;
+        }
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: #444;
+            padding: 10px 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+        }
+        .dropdown:hover .dropdown-menu,
+        .dropdown.active .dropdown-menu {
+            display: block;
+        }
+        .dropdown-menu a {
+            display: block;
+            padding: 10px 20px;
+            color: white;
+            text-decoration: none;
+        }
+        .dropdown-menu a:hover {
+            background: #555;
+        }
+        </style>
+        
+            <style>
+            @media (max-width: 768px) {
+                body {
+                    font-size: 14px;
+                    line-height: 1.6;
+                    margin: 0;
+                    padding: 0;
+                    overflow-x: hidden;
+                }
+                nav {
+                    flex-direction: column;
+                    padding: 10px 0;
+                    background: #333;
+                }
+                nav a {
+                    font-size: 1.2rem;
+                    padding: 10px 15px;
+                    text-align: center;
+                }
+                .dropdown {
+                    position: relative;
+                }
+                .dropdown-menu {
+                    display: none;
+                    position: absolute;
+                    top: 100%;
+                    left: 0;
+                    background: #444;
+                    padding: 10px 0;
+                    z-index: 1000;
+                }
+                .dropdown:hover .dropdown-menu,
+                .dropdown.active .dropdown-menu {
+                    display: block;
+                }
+                .dropdown-menu a {
+                    padding: 10px 20px;
+                    color: white;
+                    text-decoration: none;
+                }
+                .dropdown-menu a:hover {
+                    background: #555;
+                }
+            }
+            </style>
+            </head>
+            <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                const dropdowns = document.querySelectorAll(".dropdown");
+                dropdowns.forEach(dropdown => {
+                    dropdown.addEventListener("click", function(event) {
+                        event.stopPropagation();
+                        this.classList.toggle("active");
+                    });
+                });
+                document.addEventListener("click", function() {
+                    dropdowns.forEach(dropdown => dropdown.classList.remove("active"));
+                });
+            });
+            </script>
+            
+        <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const dropdowns = document.querySelectorAll(".dropdown");
+            
+            dropdowns.forEach(dropdown => {
+                dropdown.addEventListener("click", function(event) {
+                    event.stopPropagation();
+                    this.classList.toggle("active");
+                    const menu = this.querySelector(".dropdown-menu");
+                    if (menu.style.display === "block") {
+                        menu.style.display = "none";
+                    } else {
+                        menu.style.display = "block";
+                    }
+                });
+
+                // Close the dropdown if clicked outside
+                document.addEventListener("click", function() {
+                    dropdowns.forEach(dropdown => {
+                        dropdown.classList.remove("active");
+                        const menu = dropdown.querySelector(".dropdown-menu");
+                        if (menu) {
+                            menu.style.display = "none";
+                        }
+                    });
+                });
+            });
+        });
+        </script>
+        
+        <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            let prevScrollPos = window.pageYOffset;
+            const nav = document.querySelector("nav");
+
+            window.onscroll = function() {
+                let currentScrollPos = window.pageYOffset;
+                if (prevScrollPos > currentScrollPos) {
+                    nav.classList.remove("hide-nav");
+                } else {
+                    nav.classList.add("hide-nav");
+                }
+                prevScrollPos = currentScrollPos;
+            };
+
+            // Ensure "Menülerimiz" dropdown works
+            const dropdowns = document.querySelectorAll(".dropdown");
+            dropdowns.forEach(dropdown => {
+                dropdown.addEventListener("click", function() {
+                    const menu = this.querySelector(".dropdown-menu");
+                    if (menu.style.display === "block") {
+                        menu.style.display = "none";
+                    } else {
+                        menu.style.display = "block";
+                    }
+                });
+            });
+        });
+        </script>
+        
+        
+        
+<body>
+    <!-- Hizmetler Bölümü -->
+    <section id="services">
+        <h2>Hizmetlerimiz</h2>
+        <div class="service-list">
+            <div class="service-item">
+                <div class="icon">🍴</div>
+                <h3>Düğün Catering Hizmetleri</h3>
+                <p>En özel gününüz için şık sunumlar ve lezzetli menülerle unutulmaz bir deneyim sunuyoruz.</p>
+            </div>
+            <div class="service-item">
+                <div class="icon">🏢</div>
+                <h3>Kurumsal Etkinlik Catering</h3>
+                <p>Kurumsal etkinliklerinize profesyonel bir dokunuş katan kaliteli catering hizmetleri.</p>
+            </div>
+            <div class="service-item">
+                <div class="icon">🍹</div>
+                <h3>Kokteyl ve Açık Büfe Organizasyonları</h3>
+                <p>Modern sunumlar ve lezzetli aperatiflerle kokteyl etkinliklerinizi bir üst seviyeye taşıyoruz.</p>
+            </div>
+            <div class="service-item">
+                <div class="icon">🎉</div>
+                <h3>Özel Günler ve Davetler</h3>
+                <p>Doğum günü, nişan veya diğer özel günlerinizi benzersiz kılmak için buradayız.</p>
+            </div>
+            <div class="service-item">
+                <div class="icon">🚚</div>
+                <h3>Yemek Dağıtım Hizmetleri</h3>
+                <p>Her gün taze ve hijyenik koşullarda hazırlanmış yemekleri adresinize teslim ediyoruz.</p>
+            </div>
+        </div>
+        <div class="contact-section">
+            <h3>Bize Ulaşın</h3>
+            <p>Hizmetlerimiz hakkında daha fazla bilgi almak ya da teklif almak için bizimle iletişime geçin.</p>
+            <a href="https://wa.me/905345769457" target="_blank">WhatsApp ile Ulaş</a>
+        </div>
+    </section>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sıkça Sorulan Sorular - Lezzet Catering</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Lobster&display=swap" rel="stylesheet">
+    <style>
+        @font-face {
+            font-family: 'Publico';
+            src: url('fonts/Publico-Regular.woff2') format('woff2'),
+                 url('fonts/Publico-Regular.woff') format('woff'),
+                 url('fonts/Publico-Regular.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.8;
+        }
+
+        #faq {
+            background: url('https://i.hizliresim.com/ryivg7j.png') no-repeat center center;
+            background-size: cover;
+            position: relative;
+            padding: 60px 20px;
+            text-align: center;
+            color: white;
+            height: 100vh;
+        }
+
+        #faq::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 0;
+        }
+
+        #faq h2 {
+            font-family: 'Lobster', cursive;
+            font-size: 3.5rem;
+            color: #FFD700;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            text-shadow: 0 0 5px #FFD700, 0 0 10px #FFA500, 0 0 15px #FFA500;
+            position: relative;
+            z-index: 1;
+            animation: neon-flash 1.5s infinite alternate;
+        }
+
+        @keyframes neon-flash {
+            0% {
+                text-shadow: 0 0 5px #FFD700, 0 0 10px #FFA500, 0 0 20px #FFA500, 0 0 30px #FF4500;
+            }
+            100% {
+                text-shadow: 0 0 10px #FFA500, 0 0 20px #FF6347, 0 0 40px #FF4500, 0 0 50px #FF0000;
+            }
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .faq-item {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            margin-bottom: 20px;
+            box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            padding: 20px;
+            cursor: pointer;
+            color: #333;
+            font-weight: bold;
+            font-size: 1.2rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            font-family: 'Publico', serif;
+        }
+
+        .faq-item:hover {
+            transform: scale(1.05);
+            background: linear-gradient(135deg, #6A5ACD, #9370DB);
+            color: white;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            width: 80%;
+            max-width: 500px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            border-radius: 15px;
+            z-index: 1000;
+            padding: 20px;
+            text-align: center;
+            border: 4px solid transparent;
+            animation: neon-border 1.5s infinite alternate;
+        }
+
+        @keyframes neon-border {
+            0% {
+                border-color: #FFD700;
+                box-shadow: 0 0 5px #FFD700, 0 0 10px #FFA500, 0 0 20px #FF4500;
+            }
+            50% {
+                border-color: #FFA500;
+                box-shadow: 0 0 10px #FF4500, 0 0 20px #FF6347, 0 0 30px #FF4500;
+            }
+            100% {
+                border-color: #FF6347;
+                box-shadow: 0 0 15px #FF4500, 0 0 30px #FF0000, 0 0 40px #FF6347;
+            }
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 1.8rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #6A5ACD;
+            border-bottom: 2px solid #EEE;
+        }
+
+        .modal-body {
+            font-size: 1.2rem;
+            color: #444;
+            line-height: 1.8;
+            font-family: 'Publico', serif;
+        }
+
+        .modal-body p {
+            font-size: 1.1rem;
+            color: #333;
+        }
+
+        .modal-close {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #555;
+            transition: color 0.3s ease;
+        }
+
+        .modal-close:hover {
+            color: red;
+        }
+
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 999;
+        }
+
+        .overlay.active {
+            display: block;
+        }
+
+        .modal.active {
+            display: block;
+        }
+    </style>
+
+        <style>
+        @media (max-width: 768px) {
+            body {
+                font-size: 90%;
+                margin: 0;
+                padding: 0;
+            }
+            nav {
+                flex-direction: column;
+                text-align: center;
+                padding: 10px 0;
+            }
+            nav a {
+                font-size: 1rem;
+                padding: 10px 15px;
+            }
+            header, .hero {
+                padding: 20px;
+                text-align: center;
+            }
+            .menu-container, .service-list {
+                flex-wrap: wrap;
+                justify-content: center;
+                margin: 0 auto;
+            }
+            .menu-card, .service-item {
+                width: 100%;
+                margin: 10px auto;
+                max-width: 300px;
+            }
+            img {
+                max-width: 100%;
+                height: auto;
+            }
+        }
+        </style>
+        
+        <style>
+        @media (max-width: 768px) {
+            /* General adjustments for mobile screens */
+            body {
+                font-size: 14px;
+                line-height: 1.6;
+                margin: 0;
+                padding: 0;
+                overflow-x: hidden;
+            }
+            nav {
+                flex-direction: column;
+                padding: 10px 0;
+                background: #333;
+            }
+            nav a {
+                display: block;
+                font-size: 1.2rem;
+                padding: 10px 20px;
+                text-align: center;
+            }
+            header, .hero {
+                padding: 20px;
+                text-align: center;
+            }
+            header h1, .hero h1 {
+                font-size: 2rem;
+                line-height: 1.2;
+            }
+            header p, .hero p {
+                font-size: 1.2rem;
+                margin-top: 10px;
+            }
+            .menu-container, .service-list {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                margin: 0 auto;
+            }
+            .menu-card, .service-item {
+                width: 90%;
+                margin: 10px auto;
+                max-width: 300px;
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+                border-radius: 10px;
+            }
+            img {
+                max-width: 100%;
+                height: auto;
+                border-radius: 10px;
+            }
+            .contact-section, .footer {
+                padding: 20px;
+                text-align: center;
+            }
+            .contact-info p, .footer p {
+                font-size: 1rem;
+                line-height: 1.4;
+                margin: 10px 0;
+            }
+            .contact-button, .hero-btn, .about-btn {
+                display: inline-block;
+                padding: 12px 25px;
+                font-size: 1rem;
+                margin: 10px auto;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            nav a {
+                font-size: 1rem;
+                padding: 8px 15px;
+            }
+            header h1, .hero h1 {
+                font-size: 1.8rem;
+            }
+            header p, .hero p {
+                font-size: 1rem;
+            }
+            .menu-card, .service-item {
+                max-width: 280px;
+            }
+        }
+        </style>
+        
+        <style>
+        @media (max-width: 768px) {
+            /* Enlarge the "İstanbul Catering" section title */
+            header h1, .hero h1 {
+                font-size: 2.5rem;
+                line-height: 1.3;
+                margin-bottom: 15px;
+            }
+        }
+
+        /* Add effect to hide navigation on scroll */
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            transition: top 0.3s ease;
+        }
+
+        .hide-nav {
+            top: -70px;
+        }
+        </style>
+        
+        <style>
+        /* Ensure dropdown menu visibility and interaction */
+        .dropdown {
+            position: relative;
+        }
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: #444;
+            padding: 10px 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+        }
+        .dropdown:hover .dropdown-menu,
+        .dropdown.active .dropdown-menu {
+            display: block;
+        }
+        .dropdown-menu a {
+            display: block;
+            padding: 10px 20px;
+            color: white;
+            text-decoration: none;
+        }
+        .dropdown-menu a:hover {
+            background: #555;
+        }
+        </style>
+        
+            <style>
+            @media (max-width: 768px) {
+                body {
+                    font-size: 14px;
+                    line-height: 1.6;
+                    margin: 0;
+                    padding: 0;
+                    overflow-x: hidden;
+                }
+                nav {
+                    flex-direction: column;
+                    padding: 10px 0;
+                    background: #333;
+                }
+                nav a {
+                    font-size: 1.2rem;
+                    padding: 10px 15px;
+                    text-align: center;
+                }
+                .dropdown {
+                    position: relative;
+                }
+                .dropdown-menu {
+                    display: none;
+                    position: absolute;
+                    top: 100%;
+                    left: 0;
+                    background: #444;
+                    padding: 10px 0;
+                    z-index: 1000;
+                }
+                .dropdown:hover .dropdown-menu,
+                .dropdown.active .dropdown-menu {
+                    display: block;
+                }
+                .dropdown-menu a {
+                    padding: 10px 20px;
+                    color: white;
+                    text-decoration: none;
+                }
+                .dropdown-menu a:hover {
+                    background: #555;
+                }
+            }
+            </style>
+            </head>
+            <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                const dropdowns = document.querySelectorAll(".dropdown");
+                dropdowns.forEach(dropdown => {
+                    dropdown.addEventListener("click", function(event) {
+                        event.stopPropagation();
+                        this.classList.toggle("active");
+                    });
+                });
+                document.addEventListener("click", function() {
+                    dropdowns.forEach(dropdown => dropdown.classList.remove("active"));
+                });
+            });
+            </script>
+            
+        <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const dropdowns = document.querySelectorAll(".dropdown");
+            
+            dropdowns.forEach(dropdown => {
+                dropdown.addEventListener("click", function(event) {
+                    event.stopPropagation();
+                    this.classList.toggle("active");
+                    const menu = this.querySelector(".dropdown-menu");
+                    if (menu.style.display === "block") {
+                        menu.style.display = "none";
+                    } else {
+                        menu.style.display = "block";
+                    }
+                });
+
+                // Close the dropdown if clicked outside
+                document.addEventListener("click", function() {
+                    dropdowns.forEach(dropdown => {
+                        dropdown.classList.remove("active");
+                        const menu = dropdown.querySelector(".dropdown-menu");
+                        if (menu) {
+                            menu.style.display = "none";
+                        }
+                    });
+                });
+            });
+        });
+        </script>
+        
+        <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            let prevScrollPos = window.pageYOffset;
+            const nav = document.querySelector("nav");
+
+            window.onscroll = function() {
+                let currentScrollPos = window.pageYOffset;
+                if (prevScrollPos > currentScrollPos) {
+                    nav.classList.remove("hide-nav");
+                } else {
+                    nav.classList.add("hide-nav");
+                }
+                prevScrollPos = currentScrollPos;
+            };
+
+            // Ensure "Menülerimiz" dropdown works
+            const dropdowns = document.querySelectorAll(".dropdown");
+            dropdowns.forEach(dropdown => {
+                dropdown.addEventListener("click", function() {
+                    const menu = this.querySelector(".dropdown-menu");
+                    if (menu.style.display === "block") {
+                        menu.style.display = "none";
+                    } else {
+                        menu.style.display = "block";
+                    }
+                });
+            });
+        });
+        </script>
+        
+        
+        
+<body>
+    <section id="faq" class="faq">
+        <h2>Sıkça Sorulan Sorular</h2>
+        <div class="faq-container">
+            <div class="faq-item" data-answer="Catering hizmetlerimiz için minimum 10 kişi gerekmektedir.">
+                Soru 1: Minimum kişi sayısı nedir?
+            </div>
+            <div class="faq-item" data-answer="Evet, özel diyet veya istekler için menüler oluşturabiliriz.">
+                Soru 2: Özel menü taleplerini karşılıyor musunuz?
+            </div>
+            <div class="faq-item" data-answer="Şu an için İstanbul ve çevresindeki illerde hizmet vermekteyiz.">
+                Soru 3: Hangi bölgelerde hizmet veriyorsunuz?
+            </div>
+        </div>
+    </section>
+
+    <div class="overlay"></div>
+    <div class="modal">
+        <div class="modal-header">
+            <span class="modal-title">Soru</span>
+            <button class="modal-close">&times;</button>
+        </div>
+        <div class="modal-body"></div>
+    </div>
+
+    <script>
+        const faqItems = document.querySelectorAll('.faq-item');
+        const modal = document.querySelector('.modal');
+        const modalTitle = modal.querySelector('.modal-title');
+        const modalBody = modal.querySelector('.modal-body');
+        const modalClose = modal.querySelector('.modal-close');
+        const overlay = document.querySelector('.overlay');
+
+        faqItems.forEach(item => {
+            item.addEventListener('click', () => {
+                modalTitle.textContent = item.textContent.trim();
+                modalBody.textContent = item.getAttribute('data-answer');
+                modal.classList.add('active');
+                overlay.classList.add('active');
+            });
+        });
+
+        modalClose.addEventListener('click', () => {
+            modal.classList.remove('active');
+            overlay.classList.remove('active');
+        });
+
+        overlay.addEventListener('click', () => {
+            modal.classList.remove('active');
+            overlay.classList.remove('active');
+        });
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+<footer style="position: relative; padding: 30px; text-align: center; font-family: 'Montserrat', sans-serif; color: #fff; background: rgba(0, 0, 0, 0.9); box-shadow: 0 0 20px #4CAF50, 0 0 40px #FFD700, 0 0 60px #FF4500; animation: neon-border 3s infinite;">
+    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: url('https://i.hizliresim.com/elewexq.png') center/cover no-repeat; opacity: 0.2; animation: background-fade 5s infinite; z-index: 1;"></div>
+    <div style="position: relative; z-index: 2; max-width: 800px; margin: 0 auto;">
+        <p style="margin: 0 0 20px; font-size: 20px; font-weight: 600; letter-spacing: 1px; text-shadow: 0 0 15px #4CAF50, 0 0 25px #FFD700, 0 0 35px #FF4500;">
+            &copy; <span style="color: #FFD700; font-size: 22px;">2024</span> Tüm Hakları Saklıdır. 
+            <a href="https://www.istanbulcatering.com" style="color: #4CAF50; text-decoration: none; font-weight: bold; text-shadow: 0 0 15px #4CAF50, 0 0 25px #FFD700, 0 0 35px #FF4500; transition: color 0.3s ease; font-size: 18px;" onmouseover="this.style.color='#FFD700';" onmouseout="this.style.color='#4CAF50';">İstanbul Catering</a>
+        </p>
+        <ul style="list-style: none; padding: 0; margin: 0 0 20px; display: flex; justify-content: center; gap: 20px;">
+            <li>
+                <a href="https://wa.me/905345769457" style="color: #FFD700; font-size: 18px; text-decoration: none; padding: 12px 25px; border: 2px solid #FFD700; border-radius: 30px; text-shadow: 0 0 15px #FFD700, 0 0 25px #FF4500, 0 0 35px #4CAF50; font-weight: 500; transition: all 0.3s ease;" onmouseover="this.style.backgroundColor='#FFD700'; this.style.color='#000';" onmouseout="this.style.backgroundColor='transparent'; this.style.color='#FFD700';">
+                    İletişim
+                </a>
+            </li>
+            <li>
+                <a href="https://www.instagram.com/erenllhan/" style="color: #FF4500; font-size: 18px; text-decoration: none; padding: 12px 25px; border: 2px solid #FF4500; border-radius: 30px; text-shadow: 0 0 15px #FF4500, 0 0 25px #FFD700, 0 0 35px #4CAF50; font-weight: 500; transition: all 0.3s ease;" onmouseover="this.style.backgroundColor='#FF4500'; this.style.color='#000';" onmouseout="this.style.backgroundColor='transparent'; this.style.color='#FF4500';">
+                    Instagram
+                </a>
+            </li>
+        </ul>
+        <a href="https://www.instagram.com/erenllhan/" target="_blank" style="font-size: 26px; color: #4CAF50; text-decoration: none; display: inline-block; transition: transform 0.3s ease, color 0.3s ease; text-shadow: 0 0 15px #4CAF50, 0 0 25px #FFD700, 0 0 35px #FF4500; font-weight: 600;" onmouseover="this.style.color='#FFD700'; this.style.transform='scale(1.2)';" onmouseout="this.style.color='#4CAF50'; this.style.transform='scale(1)';">
+            <i class="fab fa-instagram"></i>
+        </a>
+    </div>
+</footer>
+
+<style>
+@keyframes neon-border {
+    0%, 100% {
+        box-shadow: 0 0 20px #4CAF50, 0 0 40px #FFD700, 0 0 60px #FF4500;
+    }
+    50% {
+        box-shadow: 0 0 40px #FFD700, 0 0 60px #FF4500, 0 0 80px #4CAF50;
+    }
+}
+
+@keyframes background-fade {
+    0%, 100% {
+        opacity: 0.2;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+</style>
+
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
